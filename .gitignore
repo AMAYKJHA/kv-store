@@ -1,0 +1,14 @@
+build/
+bin/
+*.o
+*.d
+*.a
+*.so
+*.rdb
+core
+vgcore.*
+compile_commands.json
+.cache/
+.idea/
+.vscode/
+*.swp
