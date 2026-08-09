@@ -16,6 +16,15 @@ Target command set for v1:
 - keyspace: `KEYS`, `DBSIZE`, `FLUSHDB`
 - misc: `PING`, `ECHO`, `COMMAND`, `QUIT`
 
+### Platform
+
+**Linux only.** The event loop is built on `epoll` and `signalfd`, both
+Linux-specific syscalls, so there is no portability layer. **WSL2 on
+Windows is supported** — it runs a real Linux kernel, so `epoll`,
+`signalfd`, sanitizers, and the test harness all behave as on native
+Linux; WSL1 is not recommended, and the repo should live on the Linux
+filesystem rather than a `/mnt/c` mount.
+
 ### Non-goals (explicitly out of scope)
 
 Clustering, replication, pub/sub, transactions/`MULTI`, Lua, streams,

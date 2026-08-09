@@ -19,7 +19,10 @@ architecture.
 
 - **GCC** (or Clang) with C11 support
 - **GNU Make**
-- A Linux host — the networking layer will use `epoll`
+- **Linux** — required. The event loop uses `epoll` and `signalfd`, which
+  are Linux-specific. **WSL2 on Windows works** (it runs a real Linux
+  kernel); WSL1 is not recommended. Keep the repo on the Linux filesystem
+  (e.g. `~/projects/...`), not under `/mnt/c/...`.
 - Optional: `redis-cli` for manual testing, `clang-format` for `make
   format`
 
