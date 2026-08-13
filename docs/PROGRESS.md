@@ -24,11 +24,11 @@ Legend: `[-]` not started / `[~]` in progress / `[x]` complete
 - [x] `util/buf.c` — init, ensure, append, consume, free
 - [x] `util/str.c` — binary-safe strings + int64 parse/format
 - [x] `util/clock.c` — monotonic `now_ms()` + injectable test clock
-- [-] `util/log.c` — leveled logging
+- [x] `util/log.c` — leveled logging
 - [x] `tests/test_str.c`
 - [x] `tests/test_buf.c`
 
-**Status:** [~]
+**Status:** [x]
 
 ---
 
