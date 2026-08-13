@@ -1,6 +1,7 @@
 #include <stdlib.h>
+#include <string.h>
 
-#include "../../include/rkv/util_buf.h"
+#include "rkv/util_buf.h"
 
 int rkv_buf_ensure(rkv_buf *b, size_t needed, size_t max_cap) {
     if (needed <= b->cap) {
@@ -31,4 +32,36 @@ int rkv_buf_ensure(rkv_buf *b, size_t needed, size_t max_cap) {
     b->cap = new_cap;
 
     return 0;
+}
+
+void rkv_buf_init(rkv_buf *b) {
+    b->data = NULL;
+    b->len = 0;
+    b->cap = 0;
+}
+
+int rkv_buf_append(rkv_buf *b, const void *data, size_t len, size_t max_cap) {
+    if (len > max_cap - b->len) {
+        return -1;
+    }
+
+    if (rkv_buf_ensure(b, b->len + len, max_cap) < 0) {
+        return -1;
+    }
+
+    memcpy(b->data + b->len, data, len);
+    b->len += len;
+    return 0;
+}
+
+void rkv_buf_consume(rkv_buf *b, size_t n) {
+    memmove(b->data, b->data + n, b->len - n);
+    b->len -= n;
+}
+
+void rkv_buf_free(rkv_buf *b) {
+    free(b->data);
+    b->data = NULL;
+    b->len = 0;
+    b->cap = 0;
 }
