@@ -22,10 +22,10 @@ Legend: `[-]` not started / `[~]` in progress / `[x]` complete
 
 - [x] `util/alloc.c` — checked malloc/realloc/free
 - [x] `util/buf.c` — init, ensure, append, consume, free
-- [-] `util/str.c` — binary-safe strings + int64 parse/format
+- [x] `util/str.c` — binary-safe strings + int64 parse/format
 - [-] `util/clock.c` — monotonic `now_ms()` + injectable test clock
 - [-] `util/log.c` — leveled logging
-- [-] `tests/test_str.c`
+- [x] `tests/test_str.c`
 - [x] `tests/test_buf.c`
 
 **Status:** [~]
