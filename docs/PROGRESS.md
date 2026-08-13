@@ -21,14 +21,14 @@ Legend: `[-]` not started / `[~]` in progress / `[x]` complete
 ## Phase 1 — `util/`: buffers, strings, clock, logging, alloc
 
 - [-] `util/alloc.c` — checked malloc/realloc/free
-- [-] `util/buf.c` — init, ensure, append, consume, free
+- [x] `util/buf.c` — init, ensure, append, consume, free
 - [-] `util/str.c` — binary-safe strings + int64 parse/format
 - [-] `util/clock.c` — monotonic `now_ms()` + injectable test clock
 - [-] `util/log.c` — leveled logging
 - [-] `tests/test_str.c`
-- [-] `tests/test_buf.c`
+- [x] `tests/test_buf.c`
 
-**Status:** [-]
+**Status:** [~]
 
 ---
 
